@@ -8,6 +8,7 @@ public class Rectangle implements Shape {
 
 
     public Rectangle(double width, double height) {
+        if (width <= 0 || height <= 0) throw new IllegalArgumentException("Width and Height can not be zero or negative");
         this.width = width;
         this.height = height;
     }
@@ -34,15 +35,15 @@ public class Rectangle implements Shape {
 
     @Override
     public String getType() {
-        if ((this.calculateArea() / this.width) == this.height) {
+        if (this.width == this.height) {
             return "Square";
         }
 
         return "Rectangle";
     }
 
-    @Override
-    public String toString() {
-       
-    }
+//    @Override
+//    public String toString() {
+//
+//    }
 }

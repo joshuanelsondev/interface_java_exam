@@ -18,7 +18,7 @@ public class Circle implements Shape {
 
     @Override
     public double calculateArea() {
-        return pi * this.radius;
+        return pi * Math.pow(this.radius, 2);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class Circle implements Shape {
         return "Circle";
     }
 
-    @Override
-    public String toString() {
-      
-    }
+//    @Override
+//    public String toString() {
+//
+//    }
 }
