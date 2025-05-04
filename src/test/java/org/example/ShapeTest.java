@@ -127,79 +127,79 @@ public class ShapeTest {
     }
 
  
-//
-//    @Test
-//    void testCompareAreas() {
-//
-//        ShapeProcessor processor = new ShapeProcessor();
-//
-//
-//        Circle circle = new Circle(5);
-//        Rectangle rectangle = new Rectangle(4, 6);
-//        assertEquals(1, processor.compareAreas(circle, rectangle),
-//                "Circle should have larger area than rectangle");
-//
-//
-//        assertEquals(-1, processor.compareAreas(rectangle, circle),
-//                "Rectangle should have smaller area than circle");
-//
-//
-//        Rectangle square1 = new Rectangle(5, 5);
-//        Rectangle square2 = new Rectangle(5, 5);
-//        assertEquals(0, processor.compareAreas(square1, square2),
-//                "Shapes with equal areas should return 0");
-//    }
-//
-//    @Test
-//    void testFindLargestShape() {
-//        List<Shape> shapes = new ArrayList<>();
-//
-//
-//        assertNull(processor.findLargestShape(shapes));
-//
-//
-//        shapes.add(circle);
-//        assertEquals(circle, processor.findLargestShape(shapes));
-//
-//        shapes.add(rectangle);
-//        shapes.add(square);
-//        shapes.add(equilateralTriangle);
-//        assertEquals(circle, processor.findLargestShape(shapes));
-//
-//
-//        Circle largerCircle = new Circle(10);
-//        shapes.add(largerCircle);
-//        assertEquals(largerCircle, processor.findLargestShape(shapes));
-//    }
-//
-//    @Test
-//    void testGenerateShapeReport() {
-//        String report = processor.generateShapeReport(circle);
-//
-//        assertTrue(report.contains("Shape Report"));
-//        assertTrue(report.contains("Type: Circle"));
-//        assertTrue(report.contains("Area: " + String.format("%.2f", Math.PI * 25)));
-//        assertTrue(report.contains("Perimeter: " + String.format("%.2f", 2 * Math.PI * 5)));
-//    }
-//
-//    @Test
-//    void testGenerateSummaryReport() {
-//        List<Shape> shapes = new ArrayList<>();
-//        shapes.add(circle);
-//        shapes.add(rectangle);
-//        shapes.add(square);
-//        shapes.add(equilateralTriangle);
-//
-//        String report = processor.generateSummaryReport(shapes);
-//
-//        assertTrue(report.contains("Shapes Summary Report"));
-//        assertTrue(report.contains("Total shapes: 4"));
-//        assertTrue(report.contains("Circles: 1"));
-//        assertTrue(report.contains("Rectangles: 2"));
-//        assertTrue(report.contains("Triangles: 1"));
-//
-//
-//        shapes.clear();
-//        assertEquals("No shapes to report.", processor.generateSummaryReport(shapes));
-//    }
+
+    @Test
+    void testCompareAreas() {
+
+        ShapeProcessor processor = new ShapeProcessor();
+
+
+        Circle circle = new Circle(5);
+        Rectangle rectangle = new Rectangle(4, 6);
+        assertEquals(1, processor.compareAreas(circle, rectangle),
+                "Circle should have larger area than rectangle");
+
+
+        assertEquals(-1, processor.compareAreas(rectangle, circle),
+                "Rectangle should have smaller area than circle");
+
+
+        Rectangle square1 = new Rectangle(5, 5);
+        Rectangle square2 = new Rectangle(5, 5);
+        assertEquals(0, processor.compareAreas(square1, square2),
+                "Shapes with equal areas should return 0");
+    }
+
+    @Test
+    void testFindLargestShape() {
+        List<Shape> shapes = new ArrayList<>();
+
+
+        assertNull(processor.findLargestShape(shapes));
+
+
+        shapes.add(circle);
+        assertEquals(circle, processor.findLargestShape(shapes));
+
+        shapes.add(rectangle);
+        shapes.add(square);
+        shapes.add(equilateralTriangle);
+        assertEquals(circle, processor.findLargestShape(shapes));
+
+
+        Circle largerCircle = new Circle(10);
+        shapes.add(largerCircle);
+        assertEquals(largerCircle, processor.findLargestShape(shapes));
+    }
+
+    @Test
+    void testGenerateShapeReport() {
+        String report = processor.generateShapeReport(circle);
+
+        assertTrue(report.contains("Shape Report"));
+        assertTrue(report.contains("Type: Circle"));
+        assertTrue(report.contains("Area: " + String.format("%.2f", Math.PI * 25)));
+        assertTrue(report.contains("Perimeter: " + String.format("%.2f", 2 * Math.PI * 5)));
+    }
+
+    @Test
+    void testGenerateSummaryReport() {
+        List<Shape> shapes = new ArrayList<>();
+        shapes.add(circle);
+        shapes.add(rectangle);
+        shapes.add(square);
+        shapes.add(equilateralTriangle);
+
+        String report = processor.generateSummaryReport(shapes);
+
+        assertTrue(report.contains("Shapes Summary Report"));
+        assertTrue(report.contains("Total shapes: 4"));
+        assertTrue(report.contains("Circles: 1"));
+        assertTrue(report.contains("Rectangles: 2"));
+        assertTrue(report.contains("Triangles: 1"));
+
+
+        shapes.clear();
+        assertEquals("No shapes to report.", processor.generateSummaryReport(shapes));
+    }
 }
